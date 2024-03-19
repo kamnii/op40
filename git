@@ -3,8 +3,14 @@
 git init - инициализация
 git remote add origin "link" - привязывает проект с репозиторией
 
+.gitignore
+
 """регулярные команды"""
 
 git add namefile/. - добавляет файлы в гит
 git commit -m '' - чекпоинт
 git push origin master/main - отправка файла в реп
+
+"""полезные команды"""
+git rm --cached namefile
+git rm --cached -r namedir
