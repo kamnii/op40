@@ -8,22 +8,36 @@ class Bank(object):
         self.__key = key
         self._balance = balance
 
-    def Get_keys(self):
-        self.__keys()
+    @property
+    def get_key(self):
+        return self.__key
 
-    def __keys(self):
-        print(self.__key)
-
-    def Set_keys(self, key):
+    @get_key.setter
+    def get_key(self, key):
         self.__key = key
+
+    @get_key.deleter
+    def get_key(self):
+        del self.__key
+
+    # def Get_keys(self):
+    #     self.__keys()
+    #
+    # def __keys(self):
+    #     print(self.__key)
+    #
+    # def Set_keys(self, key):
+    #     self.__key = key
 
     def __str__(self):
         return f'{self.name} {self._balance}'
 
 
 kani = Bank('kani', '2525', 1000)
-kani._balance = 100_000_000
 
-kani.Get_keys()
-kani.Set_keys(232323)
-kani.Get_keys()
+print(kani.get_key)
+kani.get_key = 1111111
+print(kani.get_key)
+del kani.get_key
+# print(kani.get_key)
+print(dir(kani))
